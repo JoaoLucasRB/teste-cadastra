@@ -1,0 +1,49 @@
+@import "vars";
+
+@import "reset";
+
+@import "header";
+
+@import "top";
+
+.main {
+  &-wrapper {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  &-container {
+    width: calc(100% - 2rem);
+    max-width: $content-width;
+    padding: 0 1rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-left {
+    @import "filter";
+
+    @media (max-width: $when-tablet) {
+      display: none;
+    }
+  }
+
+  &-right {
+    width: 100%;
+    max-width: 976px;
+    display: flex;
+    justify-content: center;
+
+    @import "product";
+  }
+}
+
+@import "drawer";
+
+@import "footer";
+
+body {
+  font-family: "Open Sans", sans-serif;
+  position: relative;
+}

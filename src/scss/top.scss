@@ -1,0 +1,126 @@
+.top {
+  &-wrapper {
+    width: 100%;
+  }
+
+  &-container {
+    width: calc(100% - 2rem);
+    max-width: $content-width;
+    padding: 0 1rem;
+    margin: 3rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+        @media (max-width: $when-tablet) {
+          flex-direction: column;
+          gap: 2rem;
+        }
+  }
+
+  &-title {
+    &-text {
+      color: $gray-4;
+      font-size: 32px;
+    }
+  }
+
+  &-desktop {
+    &-seletor {
+      &-wrapper {
+        @media (max-width: $when-tablet) {
+          display: none;
+        }
+      }
+
+      &-container {
+        min-width: 142px;
+        height: 42px;
+        border: 1px solid $black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        position: relative;
+        cursor: pointer;
+      }
+
+      &-options {
+        position: absolute;
+        left: -1px;
+        top: 42px;
+        width: 100%;
+        background: $base-color;
+        border: 1px solid $black;
+        border-top: unset;
+        flex-direction: column;
+        display: none;
+
+        @media (max-width: $when-tablet) {
+          border: unset;
+        }
+
+        &[data-sort-options-open] {
+          display: flex;
+        }
+      }
+
+      &-option {
+        height: 36px;
+        display: flex;
+        align-items: center;
+        transition: 0.3s all;
+        padding: 0 1rem;
+
+        @media (max-width: $when-tablet) {
+          font-size: 22px;
+          height: 52px;
+        }
+
+        &:hover {
+          background-color: $primary-75;
+          color: #FFF;
+        }
+
+        &[data-sort-option-selected] {
+          background-color: $primary;
+          color: #FFF;
+        }
+      }
+    }
+  }
+
+  &-mobile {
+    &-actions {
+      &-wrapper {
+        display: none;
+
+        @media (max-width: $when-tablet) {
+          display: block;
+        }
+      }
+
+      &-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      &-button {
+        width: 171px;
+        height: 48px;
+        border: 1px solid $gray-2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        color: $gray-2;
+        cursor: pointer;
+
+        &:last-child {
+          border-left: unset;
+        }
+      }
+    }
+  }
+}

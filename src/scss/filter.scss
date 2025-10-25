@@ -1,0 +1,84 @@
+.filter {
+  &-container {
+    min-width: 158px;
+    max-width: 158px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @media (max-width: $when-tablet) {
+      padding: 1rem;
+      max-width: 50%;
+    }
+  }
+
+  &-facet {
+
+    &-title {
+      color: $gray-4;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+
+    @media (max-width: $when-tablet) {
+      font-size: 24px;
+    }
+    }
+
+    &-cor,
+    &-preco {
+      &-values {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      &-value {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 14px;
+        cursor: pointer;
+
+        & .outline {
+          width: calc(16px - 0.24rem);
+          height: calc(16px - 0.24rem);
+          border: 1px solid $gray-1;
+          padding: 0.12rem;
+        }
+
+        &[data-filter-facet-selected] {
+          & .fill {
+            background-color: $primary;
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    &-tamanho {
+      &-values {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      &-value {
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid $gray-1;
+        color: $gray-1;
+        cursor: pointer;
+
+        &[data-filter-facet-selected] {
+          border-color: $primary;
+          color: $black;
+        }
+      }
+    }
+  }
+}
